@@ -167,6 +167,12 @@ function KkdPffPaystackFee() {
 						var fees = 0;
 					} else {
                         var obj = new KkdPffPaystackFee();
+
+                        obj.withAdditionalCharge(settings.fee.adc);
+                        obj.withThreshold(settings.fee.ths);
+                        obj.withCap(settings.fee.cap);
+                        obj.withPercentage(settings.fee.prc);
+
                         var total = obj.addFor(transaction_amount * 100) / 100;
                         var fees = total - transaction_amount;
 					}
