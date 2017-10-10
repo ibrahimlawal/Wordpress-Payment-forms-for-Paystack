@@ -163,9 +163,9 @@ function KkdPffPaystackFee() {
 			 			$('#pf-vname').val(name);
 					}
                     if (transaction_amount == '' || transaction_amount == 0 || transaction_amount.length == 0 || transaction_amount == null || isNaN (transaction_amount)) {
-						var total = 0;
-						var fees = 0;
-					} else {
+                        var total = 0;
+                        var fees = 0;
+                    } else {
                         var obj = new KkdPffPaystackFee();
 
                         obj.withAdditionalCharge(settings.fee.adc);
@@ -175,7 +175,7 @@ function KkdPffPaystackFee() {
 
                         var total = obj.addFor(transaction_amount * 100) / 100;
                         var fees = total - transaction_amount;
-					}
+                    }
 					 $(".pf-txncharge").hide().html("NGN"+fees.toFixed(2)).show().digits();
 					 $(".pf-txntotal").hide().html("NGN"+total.toFixed(2)).show().digits();
 		         }, 100);
